@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Deschide Plicul – Invitație Nuntă</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Great Vibes', cursive;
+      background: url('floral-nude-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #5a3e36;
+    }
+    .envelope {
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flap {
+      width: 100%;
+      height: 100%;
+      background-image: url('envelope-image.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+    }
+    .text {
+      margin-top: 30px;
+      font-size: 28px;
+      background-color: rgba(255,255,255,0.7);
+      padding: 10px 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope" onclick="openEnvelope()">
+    <div class="flap"></div>
+  </div>
+  <div class="text">Apasă pe plic pentru a deschide invitația 💌</div>
+
+  <script>
+    function openEnvelope() {
+      const envelope = document.querySelector('.envelope');
+      envelope.classList.add('open');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
